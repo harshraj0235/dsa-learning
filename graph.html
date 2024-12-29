@@ -1,0 +1,698 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   DSA Learning Platform - Graphs
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet"/>
+ </head>
+ <body class="font-roboto bg-gray-100">
+  <header class="bg-green-600 text-white p-4">
+   <div class="container mx-auto flex justify-between items-center">
+    <h1 class="text-2xl font-bold">
+     DSA Learning Platform
+    </h1>
+    <nav>
+     <ul class="flex space-x-4">
+      <li>
+       <a class="hover:underline" href="index.html">
+        Home
+       </a>
+      </li>
+      <li>
+       <a class="hover:underline" href="#">
+        LeetCode
+       </a>
+      </li>
+      <li>
+       <a class="hover:underline" href="#">
+        Codeforces
+       </a>
+      </li>
+      <li>
+       <a class="hover:underline" href="#">
+        About
+       </a>
+      </li>
+      <li>
+       <a class="hover:underline" href="#">
+        Contact
+       </a>
+      </li>
+     </ul>
+    </nav>
+   </div>
+  </header>
+  <main class="container mx-auto p-4">
+   <section class="bg-white p-6 rounded shadow-md mb-6">
+    <h2 class="text-xl font-bold mb-4">
+     Graphs
+    </h2>
+    <p class="mb-4">
+     Graphs ek aise data structure hain jo nodes (vertices) aur edges (connections) se milkar bante hain. Graphs ko various applications jaise social networks, web page ranking, and network routing ke liye use kiya jata hai.
+    </p>
+    <p class="mb-4">
+     Graphs ko use karne ka reason yeh hai ki yeh complex relationships aur connections ko efficiently represent karte hain. Graphs ko various operations jaise traversal, searching, shortest path finding, etc. ke liye use kiya jata hai.
+    </p>
+    <p class="mb-4">
+     Example ke liye, neeche ek graph ka illustration hai:
+    </p>
+    <img alt="A simple graph with nodes and edges representing connections between them" class="mb-4" height="400" src="https://storage.googleapis.com/a1aa/image/TNNafN5loA1Gcy2uWxjGLEc9NOGoophN9ptSPneFIYewtsfPB.jpg" width="600"/>
+   </section>
+   <section class="bg-white p-6 rounded shadow-md mb-6">
+    <h2 class="text-xl font-bold mb-4">
+     Graph Operations
+    </h2>
+    <p class="mb-4">
+     Graph par kuch common operations perform kiye ja sakte hain:
+    </p>
+    <ul class="list-disc list-inside mb-4">
+     <li>
+      <strong>
+       Traversal:
+      </strong>
+      Graph ke nodes ko visit karna (BFS, DFS).
+     </li>
+     <li>
+      <strong>
+       Shortest Path:
+      </strong>
+      Do nodes ke beech ka shortest path find karna (Dijkstra, Bellman-Ford).
+     </li>
+     <li>
+      <strong>
+       Cycle Detection:
+      </strong>
+      Graph mein cycle detect karna.
+     </li>
+     <li>
+      <strong>
+       Minimum Spanning Tree:
+      </strong>
+      Graph ka minimum spanning tree find karna (Kruskal, Prim).
+     </li>
+     <li>
+      <strong>
+       Topological Sort:
+      </strong>
+      Directed Acyclic Graph (DAG) ka topological order find karna.
+     </li>
+    </ul>
+    <p class="mb-4">
+     Example ke liye, ek graph ko BFS traversal karne ka code:
+    </p>
+    <pre class="bg-gray-200 p-4 rounded mb-4">
+class Graph {
+    constructor(vertices) {
+        this.V = vertices;
+        this.adjList = new Map();
+    }
+
+    addVertex(v) {
+        this.adjList.set(v, []);
+    }
+
+    addEdge(v, w) {
+        this.adjList.get(v).push(w);
+    }
+
+    bfs(startingNode) {
+        let visited = new Array(this.V).fill(false);
+        let queue = [];
+        visited[startingNode] = true;
+        queue.push(startingNode);
+
+        while (queue.length !== 0) {
+            let getQueueElement = queue.shift();
+            console.log(getQueueElement);
+
+            let getList = this.adjList.get(getQueueElement);
+            for (let i in getList) {
+                let neigh = getList[i];
+                if (!visited[neigh]) {
+                    visited[neigh] = true;
+                    queue.push(neigh);
+                }
+            }
+        }
+    }
+}
+            </pre>
+   </section>
+   <section class="bg-white p-6 rounded shadow-md">
+    <h2 class="text-xl font-bold mb-4">
+     Graphs Questions
+    </h2>
+    <table class="min-w-full bg-white">
+     <thead>
+      <tr>
+       <th class="py-2 px-4 border-b">
+        Question
+       </th>
+       <th class="py-2 px-4 border-b">
+        Article
+       </th>
+       <th class="py-2 px-4 border-b">
+        Practice
+       </th>
+      </tr>
+     </thead>
+     <tbody>
+      <tr>
+       <td class="py-2 px-4 border-b">
+        Create a Graph, print it
+       </td>
+       <td class="py-2 px-4 border-b">
+        <a class="text-blue-600 hover:underline" href="#">
+         Link
+        </a>
+       </td>
+       <td class="py-2 px-4 border-b">
+        <a class="text-blue-600 hover:underline" href="#">
+         Link
+        </a>
+       </td>
+      </tr>
+      <tr>
+       <td class="py-2 px-4 border-b">
+        Implement BFS algorithm
+       </td>
+       <td class="py-2 px-4 border-b">
+        <a class="text-blue-600 hover:underline" href="#">
+         Link
+        </a>
+       </td>
+       <td class="py-2 px-4 border-b">
+        <a class="text-blue-600 hover:underline" href="#">
+         Link
+        </a>
+       </td>
+      </tr>
+      <tr>
+       <td class="py-2 px-4 border-b">
+        Implement DFS Algo
+       </td>
+       <td class="py-2 px-4 border-b">
+        <a class="text-blue-600 hover:underline" href="#">
+         Link
+        </a>
+       </td>
+       <td class="py-2 px-4 border-b">
+        <a class="text-blue-600 hover:underline" href="#">
+         Link
+        </a>
+       </td>
+      </tr>
+      <tr>
+       <td class="py-2 px-4 border-b">
+        Detect Cycle in Directed Graph using BFS/DFS Algo
+       </td>
+       <td class="py-2 px-4 border-b">
+        <a class="text-blue-600 hover:underline" href="#">
+         Link
+        </a>
+       </td>
+       <td class="py-2 px-4 border-b">
+        <a class="text-blue-600 hover:underline" href="#">
+         Link
+        </a>
+       </td>
+      </tr>
+      <tr>
+       <td class="py-2 px-4 border-b">
+        Detect Cycle in UnDirected Graph using BFS/DFS Algo
+       </td>
+       <td class="py-2 px-4 border-b">
+        <a class="text-blue-600 hover:underline" href="#">
+         Link
+        </a>
+       </td>
+       <td class="py-2 px-4 border-b">
+        <a class="text-blue-600 hover:underline" href="#">
+         Link
+        </a>
+       </td>
+      </tr>
+      <tr>
+       <td class="py-2 px-4 border-b">
+        Search in a Maze
+       </td>
+       <td class="py-2 px-4 border-b">
+        <a class="text-blue-600 hover:underline" href="#">
+         Link
+        </a>
+       </td>
+       <td class="py-2 px-4 border-b">
+        <a class="text-blue-600 hover:underline" href="#">
+         Link
+        </a>
+       </td>
+      </tr>
+      <tr>
+       <td class="py-2 px-4 border-b">
+        Minimum Step by Knight
+       </td>
+       <td class="py-2 px-4 border-b">
+        <a class="text-blue-600 hover:underline" href="#">
+         Link
+        </a>
+       </td>
+       <td class="py-2 px-4 border-b">
+        <a class="text-blue-600 hover:underline" href="#">
+         Link
+        </a>
+       </td>
+      </tr>
+      <tr>
+       <td class="py-2 px-4 border-b">
+        Flood fill algo
+       </td>
+       <td class="py-2 px-4 border-b">
+        <a class="text-blue-600 hover:underline" href="#">
+         Link
+        </a>
+       </td>
+       <td class="py-2 px-4 border-b">
+        <a class="text-blue-600 hover:underline" href="#">
+         Link
+        </a>
+       </td>
+      </tr>
+      <tr>
+       <td class="py-2 px-4 border-b">
+        Clone a graph
+       </td>
+       <td class="py-2 px-4 border-b">
+        <a class="text-blue-600 hover:underline" href="#">
+         Link
+        </a>
+       </td>
+       <td class="py-2 px-4 border-b">
+        <a class="text-blue-600 hover:underline" href="#">
+         Link
+        </a>
+       </td>
+      </tr>
+      <tr>
+       <td class="py-2 px-4 border-b">
+        Making wired Connections
+       </td>
+       <td class="py-2 px-4 border-b">
+        <a class="text-blue-600 hover:underline" href="#">
+         Link
+        </a>
+       </td>
+       <td class="py-2 px-4 border-b">
+        <a class="text-blue-600 hover:underline" href="#">
+         Link
+        </a>
+       </td>
+      </tr>
+      <tr>
+       <td class="py-2 px-4 border-b">
+        Word Ladder
+       </td>
+       <td class="py-2 px-4 border-b">
+        <a class="text-blue-600 hover:underline" href="#">
+         Link
+        </a>
+       </td>
+       <td class="py-2 px-4 border-b">
+        <a class="text-blue-600 hover:underline" href="#">
+         Link
+        </a>
+       </td>
+      </tr>
+      <tr>
+       <td class="py-2 px-4 border-b">
+        Dijkstra algo
+       </td>
+       <td class="py-2 px-4 border-b">
+        <a class="text-blue-600 hover:underline" href="#">
+         Link
+        </a>
+       </td>
+       <td class="py-2 px-4 border-b">
+        <a class="text-blue-600 hover:underline" href="#">
+         Link
+        </a>
+       </td>
+      </tr>
+      <tr>
+       <td class="py-2 px-4 border-b">
+        Implement Topological Sort
+       </td>
+       <td class="py-2 px-4 border-b">
+        <a class="text-blue-600 hover:underline" href="#">
+         Link
+        </a>
+       </td>
+       <td class="py-2 px-4 border-b">
+        <a class="text-blue-600 hover:underline" href="#">
+         Link
+        </a>
+       </td>
+      </tr>
+      <tr>
+       <td class="py-2 px-4 border-b">
+        Minimum time taken by each job to be completed given by a Directed Acyclic Graph
+       </td>
+       <td class="py-2 px-4 border-b">
+        <a class="text-blue-600 hover:underline" href="#">
+         Link
+        </a>
+       </td>
+       <td class="py-2 px-4 border-b">
+        <a class="text-blue-600 hover:underline" href="#">
+         Link
+        </a>
+       </td>
+      </tr>
+      <tr>
+       <td class="py-2 px-4 border-b">
+        Find whether it is possible to finish all tasks or not from given dependencies
+       </td>
+       <td class="py-2 px-4 border-b">
+        <a class="text-blue-600 hover:underline" href="#">
+         Link
+        </a>
+       </td>
+       <td class="py-2 px-4 border-b">
+        <a class="text-blue-600 hover:underline" href="#">
+         Link
+        </a>
+       </td>
+      </tr>
+      <tr>
+       <td class="py-2 px-4 border-b">
+        Find the no. of Islands
+       </td>
+       <td class="py-2 px-4 border-b">
+        <a class="text-blue-600 hover:underline" href="#">
+         Link
+        </a>
+       </td>
+       <td class="py-2 px-4 border-b">
+        <a class="text-blue-600 hover:underline" href="#">
+         Link
+        </a>
+       </td>
+      </tr>
+      <tr>
+       <td class="py-2 px-4 border-b">
+        Given a sorted Dictionary of an Alien Language, find order of characters
+       </td>
+       <td class="py-2 px-4 border-b">
+        <a class="text-blue-600 hover:underline" href="#">
+         Link
+        </a>
+       </td>
+       <td class="py-2 px-4 border-b">
+        <a class="text-blue-600 hover:underline" href="#">
+         Link
+        </a>
+       </td>
+      </tr>
+      <tr>
+       <td class="py-2 px-4 border-b">
+        Implement Kruksal’sAlgorithm
+       </td>
+       <td class="py-2 px-4 border-b">
+        <a class="text-blue-600 hover:underline" href="#">
+         Link
+        </a>
+       </td>
+       <td class="py-2 px-4 border-b">
+        <a class="text-blue-600 hover:underline" href="#">
+         Link
+        </a>
+       </td>
+      </tr>
+      <tr>
+       <td class="py-2 px-4 border-b">
+        Implement Prim’s Algorithm
+       </td>
+       <td class="py-2 px-4 border-b">
+        <a class="text-blue-600 hover:underline" href="#">
+         Link
+        </a>
+       </td>
+       <td class="py-2 px-4 border-b">
+        <a class="text-blue-600 hover:underline" href="#">
+         Link
+        </a>
+       </td>
+      </tr>
+      <tr>
+       <td class="py-2 px-4 border-b">
+        Total no. of Spanning tree in a graph
+       </td>
+       <td class="py-2 px-4 border-b">
+        <a class="text-blue-600 hover:underline" href="#">
+         Link
+        </a>
+       </td>
+       <td class="py-2 px-4 border-b">
+        <a class="text-blue-600 hover:underline" href="#">
+         Link
+        </a>
+       </td>
+      </tr>
+      <tr>
+       <td class="py-2 px-4 border-b">
+        Implement Bellman Ford Algorithm
+       </td>
+       <td class="py-2 px-4 border-b">
+        <a class="text-blue-600 hover:underline" href="#">
+         Link
+        </a>
+       </td>
+       <td class="py-2 px-4 border-b">
+        <a class="text-blue-600 hover:underline" href="#">
+         Link
+        </a>
+       </td>
+      </tr>
+      <tr>
+       <td class="py-2 px-4 border-b">
+        Implement Floyd warshall Algorithm
+       </td>
+       <td class="py-2 px-4 border-b">
+        <a class="text-blue-600 hover:underline" href="#">
+         Link
+        </a>
+       </td>
+       <td class="py-2 px-4 border-b">
+        <a class="text-blue-600 hover:underline" href="#">
+         Link
+        </a>
+       </td>
+      </tr>
+      <tr>
+       <td class="py-2 px-4 border-b">
+        Travelling Salesman Problem
+       </td>
+       <td class="py-2 px-4 border-b">
+        <a class="text-blue-600 hover:underline" href="#">
+         Link
+        </a>
+       </td>
+       <td class="py-2 px-4 border-b">
+        <a class="text-blue-600 hover:underline" href="#">
+         Link
+        </a>
+       </td>
+      </tr>
+      <tr>
+       <td class="py-2 px-4 border-b">
+        Graph Colouring Problem
+       </td>
+       <td class="py-2 px-4 border-b">
+        <a class="text-blue-600 hover:underline" href="#">
+         Link
+        </a>
+       </td>
+       <td class="py-2 px-4 border-b">
+        <a class="text-blue-600 hover:underline" href="#">
+         Link
+        </a>
+       </td>
+      </tr>
+      <tr>
+       <td class="py-2 px-4 border-b">
+        Snake and Ladders Problem
+       </td>
+       <td class="py-2 px-4 border-b">
+        <a class="text-blue-600 hover:underline" href="#">
+         Link
+        </a>
+       </td>
+       <td class="py-2 px-4 border-b">
+        <a class="text-blue-600 hover:underline" href="#">
+         Link
+        </a>
+       </td>
+      </tr>
+      <tr>
+       <td class="py-2 px-4 border-b">
+        Find bridge in a graph
+       </td>
+       <td class="py-2 px-4 border-b">
+        <a class="text-blue-600 hover:underline" href="#">
+         Link
+        </a>
+       </td>
+       <td class="py-2 px-4 border-b">
+        <a class="text-blue-600 hover:underline" href="#">
+         Link
+        </a>
+       </td>
+      </tr>
+      <tr>
+       <td class="py-2 px-4 border-b">
+        Count Strongly connected Components(Kosaraju Algo)
+       </td>
+       <td class="py-2 px-4 border-b">
+        <a class="text-blue-600 hover:underline" href="#">
+         Link
+        </a>
+       </td>
+       <td class="py-2 px-4 border-b">
+        <a class="text-blue-600 hover:underline" href="#">
+         Link
+        </a>
+       </td>
+      </tr>
+      <tr>
+       <td class="py-2 px-4 border-b">
+        Check whether a graph is Bipartite or Not
+       </td>
+       <td class="py-2 px-4 border-b">
+        <a class="text-blue-600 hover:underline" href="#">
+         Link
+        </a>
+       </td>
+       <td class="py-2 px-4 border-b">
+        <a class="text-blue-600 hover:underline" href="#">
+         Link
+        </a>
+       </td>
+      </tr>
+      <tr>
+       <td class="py-2 px-4 border-b">
+        Detect Negative cycle in a graph
+       </td>
+       <td class="py-2 px-4 border-b">
+        <a class="text-blue-600 hover:underline" href="#">
+         Link
+        </a>
+       </td>
+       <td class="py-2 px-4 border-b">
+        <a class="text-blue-600 hover:underline" href="#">
+         Link
+        </a>
+       </td>
+      </tr>
+      <tr>
+       <td class="py-2 px-4 border-b">
+        Longest path in a Directed Acyclic Graph
+       </td>
+       <td class="py-2 px-4 border-b">
+        <a class="text-blue-600 hover:underline" href="#">
+         Link
+        </a>
+       </td>
+       <td class="py-2 px-4 border-b">
+        <a class="text-blue-600 hover:underline" href="#">
+         Link
+        </a>
+       </td>
+      </tr>
+      <tr>
+           <tr>
+        <td class="py-2 px-4 border-b">Longest path in a Directed Acyclic Graph</td>
+        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+    </tr>
+    <tr>
+        <td class="py-2 px-4 border-b">Journey to the Moon</td>
+        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+    </tr>
+    <tr>
+        <td class="py-2 px-4 border-b">Cheapest Flights Within K Stops</td>
+        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+    </tr>
+    <tr>
+        <td class="py-2 px-4 border-b">Oliver and the Game</td>
+        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+    </tr>
+    <tr>
+        <td class="py-2 px-4 border-b">Water Jug problem using BFS</td>
+        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+    </tr>
+    <tr>
+        <td class="py-2 px-4 border-b">Find if there is a path of more thank length from a source</td>
+        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+    </tr>
+    <tr>
+        <td class="py-2 px-4 border-b">M-Colouring Problem</td>
+        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+    </tr>
+    <tr>
+        <td class="py-2 px-4 border-b">Minimum edges to reverse to make path from source to destination</td>
+        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+    </tr>
+    <tr>
+        <td class="py-2 px-4 border-b">Paths to travel each nodes using each edge(Seven Bridges)</td>
+        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+    </tr>
+    <tr>
+        <td class="py-2 px-4 border-b">Vertex Cover Problem</td>
+        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+    </tr>
+    <tr>
+        <td class="py-2 px-4 border-b">Chinese Postman or Route Inspection</td>
+        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+    </tr>
+    <tr>
+        <td class="py-2 px-4 border-b">Number of Triangles in a Directed and Undirected Graph</td>
+        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+    </tr>
+    <tr>
+        <td class="py-2 px-4 border-b">Minimise the cashflow among a given set of friends who have borrowed money from each other</td>
+        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+    </tr>
+    <tr>
+        <td class="py-2 px-4 border-b">Two Clique Problem</td>
+        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+    </tr>
+    </table>
+    
+    <!-- Footer -->
+    <footer class="py-4 bg-gray-800 text-white text-center">
+        <p>&copy; 2023 Your Company. All rights reserved.</p>
+    </footer>
+      </tr>
+     </tbody>
+    </table>
+   </section>
+  </main>
+ </body>
+</html>

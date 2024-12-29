@@ -1,0 +1,215 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>DSA Learning Platform</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
+</head>
+<body class="font-roboto bg-gray-100">
+    <header class="bg-green-600 text-white p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold">DSA Learning Platform</h1>
+            <nav>
+                <ul class="flex space-x-4">
+                    <li><a class="hover:underline" href="index.html">Home</a></li>
+                    <li><a class="hover:underline" href="#">LeetCode</a></li>
+                    <li><a class="hover:underline" href="#">Codeforces</a></li>
+                    <li><a class="hover:underline" href="#">About</a></li>
+                    <li><a class="hover:underline" href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main class="container mx-auto p-4">
+        <section class="bg-white p-6 rounded shadow-md mb-6">
+            <h2 class="text-xl font-bold mb-4">Backtracking</h2>
+            <p class="mb-4">
+                Backtracking ek algorithmic technique hai jisme problems ko recursively solve kiya jata hai by trying to build a solution incrementally. Agar koi partial solution fail hota hai, toh algorithm backtrack karta hai aur previous step se naya solution try karta hai.
+            </p>
+            <p class="mb-4">
+                Example ke liye, neeche ek backtracking algorithm ka illustration hai jo local optimal choices ko select kar raha hai:
+            </p>
+            <pre class="bg-gray-200 p-4 rounded mb-4">
+Illustration of a backtracking algorithm making local optimal choices
+            </pre>
+            <p class="mb-4">
+                Backtracking algorithms ko use karne ka reason yeh hai ki yeh complex problems ko solve karne ke liye efficient hote hain, jaha brute force approach feasible nahi hoti.
+            </p>
+        </section>
+        <section class="bg-white p-6 rounded shadow-md mb-6">
+            <h2 class="text-xl font-bold mb-4">Backtracking Operations</h2>
+            <p class="mb-4">
+                Backtracking par kuch common operations perform kiye ja sakte hain:
+            </p>
+            <ul class="list-disc list-inside mb-4">
+                <li><strong>Rat in a Maze:</strong> Maze mein rat ke liye path find karna.</li>
+                <li><strong>N-Queen Problem:</strong> N queens ko chessboard par place karna bina kisi conflict ke.</li>
+                <li><strong>Word Break Problem:</strong> Given string ko dictionary words mein break karna.</li>
+                <li><strong>Sudoku Solver:</strong> Sudoku puzzle ko solve karna.</li>
+                <li><strong>M Coloring Problem:</strong> Graph ko M colors se color karna bina adjacent nodes ke same color ke.</li>
+            </ul>
+            <p class="mb-4">
+                Example ke liye, ek backtracking algorithm ka code jo N-Queen problem ko solve karta hai:
+            </p>
+            <pre class="bg-gray-200 p-4 rounded mb-4">
+#define N 4
+
+bool isSafe(int board[N][N], int row, int col) {
+    for (int i = 0; i < col; i++)
+        if (board[row][i])
+            return false;
+    for (int i = row, j = col; i >= 0 && j >= 0; i--, j--)
+        if (board[i][j])
+            return false;
+    for (int i = row, j = col; j >= 0 && i < N; i++, j--)
+        if (board[i][j])
+            return false;
+    return true;
+}
+
+bool solveNQUtil(int board[N][N], int col) {
+    if (col >= N)
+        return true;
+    for (int i = 0; i < N; i++) {
+        if (isSafe(board, i, col)) {
+            board[i][col] = 1;
+            if (solveNQUtil(board, col + 1))
+                return true;
+            board[i][col] = 0;
+        }
+    }
+    return false;
+}
+
+bool solveNQ() {
+    int board[N][N] = { { 0, 0, 0, 0 },
+                        { 0, 0, 0, 0 },
+                        { 0, 0, 0, 0 },
+                        { 0, 0, 0, 0 } };
+    if (!solveNQUtil(board, 0)) {
+        printf("Solution does not exist");
+        return false;
+    }
+    printSolution(board);
+    return true;
+}
+            </pre>
+        </section>
+        <section class="bg-white p-6 rounded shadow-md">
+            <h2 class="text-xl font-bold mb-4">Backtracking Questions</h2>
+            <table class="min-w-full bg-white">
+                <thead>
+                    <tr>
+                        <th class="py-2 px-4 border-b">Question</th>
+                        <th class="py-2 px-4 border-b">Article</th>
+                        <th class="py-2 px-4 border-b">Practice</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="py-2 px-4 border-b">Rat in a maze Problem</td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-4 border-b">Printing all solutions in N-Queen</td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-4 border-b">Word Break Problem using Backtracking</td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-4 border-b">Remove Invalid Parentheses</td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-4 border-b">Sudoku Solver</td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-4 border-b">M Coloring Problem</td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-4 border-b">Print all palindromic partitions of a string</td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-4 border-b">Subset Sum Problem</td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-4 border-b">The Knight’s tour problem</td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-4 border-b">Tug of War</td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-4 border-b">Find shortest safe route in a path with landmines</td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-4 border-b">Combinational Sum</td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-4 border-b">Find Maximum number possible by doing at-most K swaps</td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-4 border-b">Print all permutations of a string</td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-4 border-b">Find if there is a path of more than k length from a source</td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-4 border-b">Longest Possible Route in a Matrix with Hurdles</td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-4 border-b">Print all possible paths from top left to bottom right of a mXn matrix</td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-4 border-b">Partition of a set into K subsets with equal sum</td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-4 border-b">Find the K-th Permutation Sequence of first N natural numbers</td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <!-- Footer -->
+<footer class="py-4 bg-gray-800 text-white text-center">
+    <p>&copy; 2023 Your Company. All rights reserved.</p>
+</footer>
+    </main>
+</body>
+</html>

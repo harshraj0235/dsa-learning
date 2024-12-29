@@ -1,0 +1,309 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>DSA Learning Platform</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
+</head>
+<body class="font-roboto bg-gray-100">
+    <header class="bg-green-600 text-white p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold">DSA Learning Platform</h1>
+            <nav>
+                <ul class="flex space-x-4">
+                    <li><a class="hover:underline" href="index.html">Home</a></li>
+                    <li><a class="hover:underline" href="#">LeetCode</a></li>
+                    <li><a class="hover:underline" href="#">Codeforces</a></li>
+                    <li><a class="hover:underline" href="#">About</a></li>
+                    <li><a class="hover:underline" href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main class="container mx-auto p-4">
+        <section class="bg-white p-6 rounded shadow-md mb-6">
+            <h2 class="text-xl font-bold mb-4">Searching and Sorting</h2>
+            <p class="mb-4">
+                Searching and Sorting are fundamental operations in computer science. Searching is the process of finding an element in a data structure, while sorting is the process of arranging elements in a particular order.
+            </p>
+            <p class="mb-4">
+                Example ke liye, neeche ek sorted array ko consider karein:
+            </p>
+            <pre class="bg-gray-200 p-4 rounded mb-4">
+int arr[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+            </pre>
+            <p class="mb-4">
+                Yaha, array <code>arr</code> mein elements sorted order mein hain.
+            </p>
+        </section>
+        <section class="bg-white p-6 rounded shadow-md mb-6">
+            <h2 class="text-xl font-bold mb-4">Searching Operations</h2>
+            <p class="mb-4">
+                Searching par kuch common operations perform kiye ja sakte hain:
+            </p>
+            <ul class="list-disc list-inside mb-4">
+                <li><strong>Linear Search:</strong> Sequentially search karna har element ko.</li>
+                <li><strong>Binary Search:</strong> Divide and conquer approach use karna sorted array mein search karne ke liye.</li>
+            </ul>
+            <p class="mb-4">
+                Example ke liye, ek binary search ka code:
+            </p>
+            <pre class="bg-gray-200 p-4 rounded mb-4">
+int binarySearch(int arr[], int l, int r, int x) {
+    while (l <= r) {
+        int m = l + (r - l) / 2;
+        if (arr[m] == x)
+            return m;
+        if (arr[m] < x)
+            l = m + 1;
+        else
+            r = m - 1;
+    }
+    return -1;
+}
+            </pre>
+        </section>
+        <section class="bg-white p-6 rounded shadow-md mb-6">
+            <h2 class="text-xl font-bold mb-4">Sorting Operations</h2>
+            <p class="mb-4">
+                Sorting par kuch common operations perform kiye ja sakte hain:
+            </p>
+            <ul class="list-disc list-inside mb-4">
+                <li><strong>Bubble Sort:</strong> Repeatedly swap karna adjacent elements ko agar woh galat order mein hain.</li>
+                <li><strong>Selection Sort:</strong> Repeatedly select karna minimum element ko unsorted part se aur usse sorted part mein place karna.</li>
+                <li><strong>Merge Sort:</strong> Divide and conquer approach use karna array ko sort karne ke liye.</li>
+                <li><strong>Quick Sort:</strong> Divide and conquer approach use karna array ko sort karne ke liye, pivot element ke around partitioning karte hue.</li>
+            </ul>
+            <p class="mb-4">
+                Example ke liye, ek bubble sort ka code:
+            </p>
+            <pre class="bg-gray-200 p-4 rounded mb-4">
+void bubbleSort(int arr[], int n) {
+    for (int i = 0; i < n-1; i++) {
+        for (int j = 0; j < n-i-1; j++) {
+            if (arr[j] > arr[j+1]) {
+                int temp = arr[j];
+                arr[j] = arr[j+1];
+                arr[j+1] = temp;
+            }
+        }
+    }
+}
+            </pre>
+        </section>
+        <section class="bg-white p-6 rounded shadow-md">
+            <h2 class="text-xl font-bold mb-4">Searching and Sorting Questions</h2>
+            <table class="min-w-full bg-white">
+                <thead>
+                    <tr>
+                        <th class="py-2 px-4 border-b">Question</th>
+                        <th class="py-2 px-4 border-b">Article</th>
+                        <th class="py-2 px-4 border-b">Practice</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="py-2 px-4 border-b">Find first and last positions of an element in a sorted array</td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-4 border-b">Find a Fixed Point (Value equal to index) in a given array</td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-4 border-b">Search in a rotated sorted array</td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-4 border-b">Square root of an integer</td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-4 border-b">Maximum and minimum of an array using minimum number of comparisons</td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-4 border-b">Optimum location of point to minimize total distance</td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-4 border-b">Find the repeating and the missing</td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-4 border-b">Find majority element</td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-4 border-b">Searching in an array where adjacent differ by at most k</td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-4 border-b">Find a pair with a given difference</td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-4 border-b">Find four elements that sum to a given value</td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-4 border-b">Maximum sum such that no 2 elements are adjacent</td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-4 border-b">Count triplet with sum smaller than a given value</td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-4 border-b">Merge 2 sorted arrays</td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-4 border-b">Product array Puzzle</td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-4 border-b">Sort array according to count of set bits</td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-4 border-b">Minimum no. of swaps required to sort the array</td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-4 border-b">Bishu and Soldiers</td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-4 border-b">Rasta and Kheshtak</td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-4 border-b">Kth smallest number again</td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-4 border-b">Find pivot element in a sorted array</td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-4 border-b">K-th Element of Two Sorted Arrays</td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-4 border-b">Aggressive cows</td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-4 border-b">Book Allocation Problem</td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-4 border-b">EKOSPOJ:</td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-4 border-b">Job Scheduling Algo</td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-4 border-b">Missing Number in AP</td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-4 border-b">Smallest number with atleast n trailing zeroes in factorial</td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-4 border-b">Painters Partition Problem:</td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        </tr>
+                        </tbody>
+                                                <tr>
+                            <td class="py-2 px-4 border-b">Job Scheduling Algo</td>
+                            <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                            <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        </tr>
+                        <tr>
+                            <td class="py-2 px-4 border-b">Missing Number in AP</td>
+                            <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                            <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        </tr>
+                        <tr>
+                            <td class="py-2 px-4 border-b">Smallest number with atleast n trailing zeroes in factorial</td>
+                            <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                            <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        </tr>
+                        <tr>
+                            <td class="py-2 px-4 border-b">Painters Partition Problem:</td>
+                            <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                            <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        </tr>
+                        <tr>
+                            <td class="py-2 px-4 border-b">ROTI-Prata SPOJ</td>
+                            <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                            <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        </tr>
+                        <tr>
+                            <td class="py-2 px-4 border-b">DoubleHelix SPOJ</td>
+                            <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                            <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        </tr>
+                        <tr>
+                            <td class="py-2 px-4 border-b">Subset Sums</td>
+                            <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                            <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        </tr>
+                        <tr>
+                            <td class="py-2 px-4 border-b">Find the inversion count</td>
+                            <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                            <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        </tr>
+                        <tr>
+                            <td class="py-2 px-4 border-b">Implement Merge-sort in-place</td>
+                            <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                            <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        </tr>
+                        <tr>
+                            <td class="py-2 px-4 border-b">Partitioning and Sorting Arrays with Many Repeated Entries</td>
+                            <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                            <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        </tr>
+                        </tbody>
+                        </table>
+                        
+                        <!-- Footer -->
+                        <footer class="py-4 bg-gray-800 text-white text-center">
+                            <p>&copy; 2023 Your Company. All rights reserved.</p>
+                        </footer>

@@ -1,0 +1,282 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>DSA Learning Platform</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
+</head>
+<body class="font-roboto bg-gray-100">
+    <header class="bg-green-600 text-white p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold">DSA Learning Platform</h1>
+            <nav>
+                <ul class="flex space-x-4">
+                    <li><a class="hover:underline" href="index.html">Home</a></li>
+                    <li><a class="hover:underline" href="#">LeetCode</a></li>
+                    <li><a class="hover:underline" href="#">Codeforces</a></li>
+                    <li><a class="hover:underline" href="#">About</a></li>
+                    <li><a class="hover:underline" href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main class="container mx-auto p-4">
+        <section class="bg-white p-6 rounded shadow-md mb-6">
+            <h2 class="text-xl font-bold mb-4">Linked List Data Structure</h2>
+            <p class="mb-4">
+                Linked List ek linear data structure hai jisme elements ko nodes ke form mein store kiya jata hai. Har node mein data aur next node ka reference hota hai. Linked List ko dynamic memory allocation aur efficient insertion/deletion operations ke liye use kiya jata hai.
+            </p>
+            <p class="mb-4">
+                Example ke liye, neeche ek simple linked list ko consider karein:
+            </p>
+            <pre class="bg-gray-200 p-4 rounded mb-4">
+struct Node {
+    int data;
+    struct Node* next;
+};
+
+struct Node* head = NULL;
+            </pre>
+            <p class="mb-4">
+                Yaha, linked list <code>head</code> node se start hoti hai.
+            </p>
+        </section>
+        <section class="bg-white p-6 rounded shadow-md mb-6">
+            <h2 class="text-xl font-bold mb-4">Linked List Operations</h2>
+            <p class="mb-4">
+                Linked List par kuch common operations perform kiye ja sakte hain:
+            </p>
+            <ul class="list-disc list-inside mb-4">
+                <li><strong>Traversal:</strong> Linked list ke har node ko access karna.</li>
+                <li><strong>Insertion:</strong> Linked list mein ek naya node add karna.</li>
+                <li><strong>Deletion:</strong> Linked list se ek node remove karna.</li>
+                <li><strong>Searching:</strong> Linked list mein ek specific node ko dhoondhna.</li>
+                <li><strong>Reversal:</strong> Linked list ke nodes ko reverse order mein arrange karna.</li>
+            </ul>
+            <p class="mb-4">
+                Example ke liye, ek linked list ko traverse karne ka code:
+            </p>
+            <pre class="bg-gray-200 p-4 rounded mb-4">
+void printList(struct Node* node) {
+    while (node != NULL) {
+        printf("%d ", node->data);
+        node = node->next;
+    }
+}
+            </pre>
+        </section>
+        <section class="bg-white p-6 rounded shadow-md">
+            <h2 class="text-xl font-bold mb-4">Linked List Questions</h2>
+            <table class="min-w-full bg-white">
+                <thead>
+                    <tr>
+                        <th class="py-2 px-4 border-b">Question</th>
+                        <th class="py-2 px-4 border-b">Article</th>
+                        <th class="py-2 px-4 border-b">Practice</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="py-2 px-4 border-b">Write a Program to reverse the Linked List. (Both Iterative and recursive)</td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-4 border-b">Reverse a Linked List in group of Given Size. [Very Imp]</td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-4 border-b">Write a program to Detect loop in a linked list.</td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-4 border-b">Write a program to Delete loop in a linked list.</td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-4 border-b">Find the starting point of the loop.</td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-4 border-b">Remove Duplicates in a sorted Linked List.</td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-4 border-b">Remove Duplicates in a Un-sorted Linked List.</td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-4 border-b">Write a Program to Move the last element to Front in a Linked List.</td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-4 border-b">Add “1” to a number represented as a Linked List.</td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-4 border-b">Add two numbers represented by linked lists.</td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-4 border-b">Intersection of two Sorted Linked List.</td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-4 border-b">Intersection Point of two Linked Lists.</td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-4 border-b">Merge Sort For Linked lists.[Very Important]</td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-4 border-b">Quicksort for Linked Lists.[Very Important]</td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-4 border-b">Find the middle Element of a linked list.</td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-4 border-b">Check if a linked list is a circular linked list.</td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-4 border-b">Split a Circular linked list into two halves.</td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-4 border-b">Write a Program to check whether the Singly Linked list is a palindrome or not.</td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-4 border-b">Deletion from a Circular Linked List.</td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-4 border-b">Reverse a Doubly Linked list.</td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-4 border-b">Find pairs with a given sum in a DLL.</td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-4 border-b">Count triplets in a sorted DLL whose sum is equal to given value “X”.</td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-4 border-b">Sort a “k”sorted Doubly Linked list.[Very IMP]</td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-4 border-b">Rotate Doubly Linked list by N nodes.</td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-4 border-b">Rotate a Doubly Linked list in group of Given Size.[Very IMP]</td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-4 border-b">Can we reverse a linked list in less than O(n) ?</td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-4 border-b">Why Quicksort is preferred for. Arrays and Merge Sort for Linked Lists ?</td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-4 border-b">Flatten a Linked List</td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-4 border-b">Sort a LL of 0’s, 1’s and 2’s</td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-4 border-b">Clone a linked list with next and random pointer</td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-4 border-b">Merge K sorted Linked list</td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    </tr>
+                    <tr>
+                                              <tr>
+                            <td class="py-2 px-4 border-b">Flatten a Linked List</td>
+                            <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                            <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        </tr>
+                        <tr>
+                            <td class="py-2 px-4 border-b">Sort a LL of 0’s, 1’s and 2’s</td>
+                            <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                            <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        </tr>
+                        <tr>
+                            <td class="py-2 px-4 border-b">Clone a linked list with next and random pointer</td>
+                            <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                            <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        </tr>
+                        <tr>
+                            <td class="py-2 px-4 border-b">Merge K sorted Linked list</td>
+                            <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                            <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        </tr>
+                        <tr>
+                            <td class="py-2 px-4 border-b">Multiply 2 no. represented by LL</td>
+                            <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                            <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        </tr>
+                        <tr>
+                            <td class="py-2 px-4 border-b">Delete nodes which have a greater value on right side</td>
+                            <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                            <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        </tr>
+                        <tr>
+                            <td class="py-2 px-4 border-b">Segregate even and odd nodes in a Linked List</td>
+                            <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                            <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        </tr>
+                        <tr>
+                            <td class="py-2 px-4 border-b">Program for n’th node from the end of a Linked List</td>
+                            <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                            <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        </tr>
+                        </table>
+                        
+                        <!-- Footer -->
+                        <footer class="py-4 bg-gray-800 text-white text-center">
+                            <p>&copy; 2023 Your Company. All rights reserved.</p>
+                        </footer>  

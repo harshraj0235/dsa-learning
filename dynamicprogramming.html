@@ -1,0 +1,403 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>DSA Learning Platform</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
+</head>
+<body class="font-roboto bg-gray-100">
+    <header class="bg-green-600 text-white p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold">DSA Learning Platform</h1>
+            <nav>
+                <ul class="flex space-x-4">
+                    <li><a class="hover:underline" href="index.html">Home</a></li>
+                    <li><a class="hover:underline" href="#">LeetCode</a></li>
+                    <li><a class="hover:underline" href="#">Codeforces</a></li>
+                    <li><a class="hover:underline" href="#">About</a></li>
+                    <li><a class="hover:underline" href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main class="container mx-auto p-4">
+        <section class="bg-white p-6 rounded shadow-md mb-6">
+            <h2 class="text-xl font-bold mb-4">Dynamic Programming</h2>
+            <p class="mb-4">
+                Dynamic Programming (DP) ek algorithmic technique hai jo complex problems ko solve karne ke liye use hoti hai by breaking them down into simpler subproblems. DP ko optimization problems ko solve karne ke liye use kiya jata hai jaha overlapping subproblems aur optimal substructure properties hoti hain.
+            </p>
+            <p class="mb-4">
+                Example ke liye, neeche ek dynamic programming algorithm ka illustration hai jo local optimal choices ko select kar raha hai:
+            </p>
+            <pre class="bg-gray-200 p-4 rounded mb-4">
+Illustration of a dynamic programming algorithm making local optimal choices
+            </pre>
+            <p class="mb-4">
+                Dynamic Programming algorithms ko use karne ka reason yeh hai ki yeh complex problems ko efficiently solve karte hain by storing the results of subproblems to avoid redundant computations.
+            </p>
+        </section>
+        <section class="bg-white p-6 rounded shadow-md mb-6">
+            <h2 class="text-xl font-bold mb-4">Dynamic Programming Operations</h2>
+            <p class="mb-4">
+                Dynamic Programming par kuch common operations perform kiye ja sakte hain:
+            </p>
+            <ul class="list-disc list-inside mb-4">
+                <li><strong>Memoization:</strong> Recursive approach with caching of subproblem results.</li>
+                <li><strong>Tabulation:</strong> Iterative approach with a table to store subproblem results.</li>
+                <li><strong>Optimal Substructure:</strong> Problem can be broken down into optimal subproblems.</li>
+                <li><strong>Overlapping Subproblems:</strong> Subproblems are solved multiple times.</li>
+            </ul>
+            <p class="mb-4">
+                Example ke liye, ek dynamic programming algorithm ka code jo Fibonacci sequence ko solve karta hai:
+            </p>
+            <pre class="bg-gray-200 p-4 rounded mb-4">
+int fib(int n) {
+    int f[n+2];
+    f[0] = 0;
+    f[1] = 1;
+    for (int i = 2; i <= n; i++) {
+        f[i] = f[i-1] + f[i-2];
+    }
+    return f[n];
+}
+            </pre>
+        </section>
+        <section class="bg-white p-6 rounded shadow-md">
+            <h2 class="text-xl font-bold mb-4">Dynamic Programming Questions</h2>
+            <table class="min-w-full bg-white">
+                <thead>
+                    <tr>
+                        <th class="py-2 px-4 border-b">Question</th>
+                        <th class="py-2 px-4 border-b">Article</th>
+                        <th class="py-2 px-4 border-b">Practice</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="py-2 px-4 border-b">Coin Change Problem</td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-4 border-b">Knapsack Problem</td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-4 border-b">Binomial Coefficient Problem</td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-4 border-b">Permutation Coefficient Problem</td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-4 border-b">Program for nth Catalan Number</td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-4 border-b">Matrix Chain Multiplication</td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-4 border-b">Edit Distance</td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-4 border-b">Subset Sum Problem</td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-4 border-b">Friends Pairing Problem</td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-4 border-b">Gold Mine Problem</td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-4 border-b">Assembly Line Scheduling Problem</td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-4 border-b">Painting the Fence problem</td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-4 border-b">Maximize The Cut Segments</td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-4 border-b">Longest Common Subsequence</td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-4 border-b">Longest Repeated Subsequence</td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-4 border-b">Longest Increasing Subsequence</td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-4 border-b">Space Optimized Solution of LCS</td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-4 border-b">LCS (Longest Common Subsequence) of three strings</td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-4 border-b">Maximum Sum Increasing Subsequence</td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-4 border-b">Count all subsequences having product less than K</td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-4 border-b">Longest subsequence such that difference between adjacent is one</td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-4 border-b">Maximum subsequence sum such that no three are consecutive</td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-4 border-b">Egg Dropping Problem</td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-4 border-b">Maximum Length Chain of Pairs</td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-4 border-b">Maximum size square sub-matrix with all 1s</td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-4 border-b">Maximum sum of pairs with specific difference</td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-4 border-b">Min Cost Path Problem</td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-4 border-b">Maximum difference of zeros and ones in binary string</td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-4 border-b">Minimum number of jumps to reach end</td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-4 border-b">Minimum cost to fill given weight in a bag</td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-4 border-b">Minimum removals from array to make max –min <= K</td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-4 border-b">Longest Common Substring</td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                                   </tr>
+                <tr>
+                    <td class="py-2 px-4 border-b">Minimum number of jumps to reach end</td>
+                    <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                </tr>
+                <tr>
+                    <td class="py-2 px-4 border-b">Minimum cost to fill given weight in a bag</td>
+                    <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                </tr>
+                <tr>
+                    <td class="py-2 px-4 border-b">Minimum removals from array to make max –min <= K</td>
+                    <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                </tr>
+                <tr>
+                    <td class="py-2 px-4 border-b">Longest Common Substring</td>
+                    <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                </tr>
+                <tr>
+                    <td class="py-2 px-4 border-b">Count number of ways to reach a given score in a game</td>
+                    <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                </tr>
+                <tr>
+                    <td class="py-2 px-4 border-b">Count Balanced Binary Trees of Height h</td>
+                    <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                </tr>
+                <tr>
+                    <td class="py-2 px-4 border-b">LargestSum Contiguous Subarray [V>V>V>V IMP ]</td>
+                    <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                </tr>
+                <tr>
+                    <td class="py-2 px-4 border-b">Smallest sum contiguous subarray</td>
+                    <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                </tr>
+                <tr>
+                    <td class="py-2 px-4 border-b">Unbounded Knapsack (Repetition of items allowed)</td>
+                    <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                </tr>
+                <tr>
+                    <td class="py-2 px-4 border-b">Word Break Problem</td>
+                    <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                </tr>
+                <tr>
+                    <td class="py-2 px-4 border-b">Largest Independent Set Problem</td>
+                    <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                </tr>
+                <tr>
+                    <td class="py-2 px-4 border-b">Partition problem</td>
+                    <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                </tr>
+                <tr>
+                    <td class="py-2 px-4 border-b">Longest Palindromic Subsequence</td>
+                    <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                </tr>
+                <tr>
+                    <td class="py-2 px-4 border-b">Count All Palindromic Subsequence in a given String</td>
+                    <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                </tr>
+                <tr>
+                    <td class="py-2 px-4 border-b">Longest Palindromic Substring</td>
+                    <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                </tr>
+                <tr>
+                    <td class="py-2 px-4 border-b">Longest alternating subsequence</td>
+                    <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                </tr>
+                <tr>
+                    <td class="py-2 px-4 border-b">Weighted Job Scheduling</td>
+                    <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                </tr>
+                <tr>
+                    <td class="py-2 px-4 border-b">Coin game winner where every player has three choices</td>
+                    <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                </tr>
+                <tr>
+                    <td class="py-2 px-4 border-b">Count Derangements (Permutation such that no element appears in its original position) [ IMPORTANT ]</td>
+                    <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                </tr>
+                <tr>
+                    <td class="py-2 px-4 border-b">Maximum profit by buying and selling a share at most twice [ IMP ]</td>
+                    <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                </tr>
+                <tr>
+                    <td class="py-2 px-4 border-b">Optimal Strategy for a Game</td>
+                    <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                </tr>
+                <tr>
+                    <td class="py-2 px-4 border-b">Optimal Binary Search Tree</td>
+                    <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                </tr>
+                <tr>
+                    <td class="py-2 px-4 border-b">Palindrome Partitioning Problem</td>
+                    <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                </tr>
+                <tr>
+                    <td class="py-2 px-4 border-b">Word Wrap Problem</td>
+                    <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                </tr>
+                <tr>
+                    <td class="py-2 px-4 border-b">Mobile Numeric Keypad Problem [ IMP ]</td>
+                    <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                </tr>
+                <tr>
+                    <td class="py-2 px-4 border-b">Boolean Parenthesization Problem</td>
+                    <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                </tr>
+                <tr>
+                    <td class="py-2 px-4 border-b">Largest rectangular sub-matrix whose sum is 0</td>
+                    <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                </tr>
+                <tr>
+                    <td class="py-2 px-4 border-b">Largest area rectangular sub-matrix with equal number of 1’s and 0’s [ IMP ]</td>
+                    <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                </tr>
+                <tr>
+                    <td class="py-2 px-4 border-b">Maximum sum rectangle in a 2D matrix</td>
+                    <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                </tr>
+                <tr>
+                    <td class="py-2 px-4 border-b">Maximum profit by buying and selling a share at most k times</td>
+                    <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                </tr>
+                <tr>
+                    <td class="py-2 px-4 border-b">Find if a string is interleaved of two other strings</td>
+                    <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                </tr>
+                <tr>
+                    <td class="py-2 px-4 border-b">Maximum Length of Pair Chain</td>
+                    <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                </tr>
+                </table>
+                
+                <!-- Footer -->
+                <footer class="py-4 bg-gray-800 text-white text-center">
+                    <p>&copy; 2023 Your Company. All rights reserved.</p>
+                </footer>

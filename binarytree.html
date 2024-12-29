@@ -1,0 +1,290 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>DSA Learning Platform</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
+</head>
+<body class="font-roboto bg-gray-100">
+    <header class="bg-green-600 text-white p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold">DSA Learning Platform</h1>
+            <nav>
+                <ul class="flex space-x-4">
+                    <li><a class="hover:underline" href="index.html">Home</a></li>
+                    <li><a class="hover:underline" href="#">LeetCode</a></li>
+                    <li><a class="hover:underline" href="#">Codeforces</a></li>
+                    <li><a class="hover:underline" href="#">About</a></li>
+                    <li><a class="hover:underline" href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main class="container mx-auto p-4">
+        <section class="bg-white p-6 rounded shadow-md mb-6">
+            <h2 class="text-xl font-bold mb-4">Binary Trees</h2>
+            <p class="mb-4">
+                Binary Trees ek hierarchical data structure hai jisme har node ke maximum do children hote hain, left child aur right child. Binary Trees ko various applications jaise expression parsing, searching, and sorting ke liye use kiya jata hai.
+            </p>
+            <p class="mb-4">
+                Example ke liye, neeche ek binary tree ka illustration hai:
+            </p>
+            <pre class="bg-gray-200 p-4 rounded mb-4">
+        1
+       / \
+      2   3
+     / \ / \
+    4  5 6  7
+            </pre>
+            <p class="mb-4">
+                Binary Trees ko use karne ka reason yeh hai ki yeh hierarchical data ko efficiently manage karte hain aur inhe various operations jaise traversal, insertion, deletion, etc. ke liye use kiya jata hai.
+            </p>
+        </section>
+        <section class="bg-white p-6 rounded shadow-md mb-6">
+            <h2 class="text-xl font-bold mb-4">Binary Tree Operations</h2>
+            <p class="mb-4">
+                Binary Tree par kuch common operations perform kiye ja sakte hain:
+            </p>
+            <ul class="list-disc list-inside mb-4">
+                <li><strong>Traversal:</strong> Tree ke nodes ko visit karna (Inorder, Preorder, Postorder, Level Order).</li>
+                <li><strong>Insertion:</strong> Tree mein ek naya node add karna.</li>
+                <li><strong>Deletion:</strong> Tree se ek node remove karna.</li>
+                <li><strong>Searching:</strong> Tree mein ek specific node ko dhoondhna.</li>
+                <li><strong>Height:</strong> Tree ki height ko find karna.</li>
+                <li><strong>Diameter:</strong> Tree ka diameter find karna.</li>
+            </ul>
+            <p class="mb-4">
+                Example ke liye, ek binary tree ko inorder traversal karne ka code:
+            </p>
+            <pre class="bg-gray-200 p-4 rounded mb-4">
+class Node {
+    constructor(data) {
+        this.data = data;
+        this.left = null;
+        this.right = null;
+    }
+}
+
+function inorderTraversal(node) {
+    if (node == null) return;
+    inorderTraversal(node.left);
+    console.log(node.data + " ");
+    inorderTraversal(node.right);
+}
+            </pre>
+        </section>
+        <section class="bg-white p-6 rounded shadow-md">
+            <h2 class="text-xl font-bold mb-4">Binary Trees Questions</h2>
+            <table class="min-w-full bg-white">
+                <thead>
+                    <tr>
+                        <th class="py-2 px-4 border-b">Question</th>
+                        <th class="py-2 px-4 border-b">Article</th>
+                        <th class="py-2 px-4 border-b">Practice</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="py-2 px-4 border-b">Level order traversal</td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-4 border-b">Reverse Level Order traversal</td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-4 border-b">Height of a tree</td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-4 border-b">Diameter of a tree</td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-4 border-b">Mirror of a tree</td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-4 border-b">Inorder Traversal of a tree both using recursion and Iteration</td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-4 border-b">Preorder Traversal of a tree both using recursion and Iteration</td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-4 border-b">Postorder Traversal of a tree both using recursion and Iteration</td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-4 border-b">Left View of a tree</td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-4 border-b">Right View of Tree</td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-4 border-b">Top View of a tree</td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-4 border-b">Bottom View of a tree</td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-4 border-b">Zig-Zag traversal of a binary tree</td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-4 border-b">Check if a tree is balanced or not</td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-4 border-b">Diagonal Traversal of a Binary tree</td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-4 border-b">Boundary traversal of a Binary tree</td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-4 border-b">Construct Binary Tree from String with Bracket Representation</td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-4 border-b">Convert Binary tree into Doubly Linked List</td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-4 border-b">Convert Binary tree into Sum tree</td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-4 border-b">Construct Binary tree from Inorder and preorder traversal</td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-4 border-b">Find minimum swaps required to convert a Binary tree into BST</td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-4 border-b">Check if Binary tree is Sum tree or not</td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-4 border-b">Check if all leaf nodes are at same level or not</td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-4 border-b">Check if a Binary Tree contains duplicate subtrees of size 2 or more [ IMP ]</td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-4 border-b">Check if 2 trees are mirror or not</td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-4 border-b">Sum of Nodes on the Longest path from root to leaf node</td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-4 border-b">Check if given graph is tree or not.  [ IMP ]</td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-4 border-b">Find Largest subtree sum in a tree</td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-4 border-b">Maximum Sum of nodes in Binary tree such that no two are adjacent</td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-4 border-b">Print all “K” Sum paths in a Binary tree</td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-4 border-b">Find LCA in a Binary tree</td>
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                                               
+                        <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        </tr>
+                        <tr>
+                            <td class="py-2 px-4 border-b">Find Largest subtree sum in a tree</td>
+                            <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                            <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        </tr>
+                        <tr>
+                            <td class="py-2 px-4 border-b">Maximum Sum of nodes in Binary tree such that no two are adjacent</td>
+                            <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                            <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        </tr>
+                        <tr>
+                            <td class="py-2 px-4 border-b">Print all “K” Sum paths in a Binary tree</td>
+                            <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                            <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        </tr>
+                        <tr>
+                            <td class="py-2 px-4 border-b">Find LCA in a Binary tree</td>
+                            <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                            <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        </tr>
+                        <tr>
+                            <td class="py-2 px-4 border-b">Find distance between 2 nodes in a Binary tree</td>
+                            <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                            <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        </tr>
+                        <tr>
+                            <td class="py-2 px-4 border-b">Kth Ancestor of node in a Binary tree</td>
+                            <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                            <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        </tr>
+                        <tr>
+                            <td class="py-2 px-4 border-b">Find all Duplicate subtrees in a Binary tree [ IMP ]</td>
+                            <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                            <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        </tr>
+                        <tr>
+                            <td class="py-2 px-4 border-b">Tree Isomorphism Problem</td>
+                            <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                            <td class="py-2 px-4 border-b"><a class="text-blue-600 hover:underline" href="#">Link</a></td>
+                        </tr>
+                        </table>
+                        
+                        <!-- Footer -->
+                        <footer class="py-4 bg-gray-800 text-white text-center">
+                            <p>&copy; 2023 Your Company. All rights reserved.</p>
+                        </footer>

@@ -1,0 +1,476 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   DSA Learning Platform - Heaps
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet"/>
+ </head>
+ <body class="font-roboto bg-gray-100">
+  <header class="bg-green-600 text-white p-4">
+   <div class="container mx-auto flex justify-between items-center">
+    <h1 class="text-2xl font-bold">
+     DSA Learning Platform
+    </h1>
+    <nav>
+     <ul class="flex space-x-4">
+      <li>
+       <a class="hover:underline" href="index.html">
+        Home
+       </a>
+      </li>
+      <li>
+       <a class="hover:underline" href="#">
+        LeetCode
+       </a>
+      </li>
+      <li>
+       <a class="hover:underline" href="#">
+        Codeforces
+       </a>
+      </li>
+      <li>
+       <a class="hover:underline" href="#">
+        About
+       </a>
+      </li>
+      <li>
+       <a class="hover:underline" href="#">
+        Contact
+       </a>
+      </li>
+     </ul>
+    </nav>
+   </div>
+  </header>
+  <main class="container mx-auto p-4">
+   <section class="bg-white p-6 rounded shadow-md mb-6">
+    <h2 class="text-xl font-bold mb-4">
+     Heaps
+    </h2>
+    <p class="mb-4">
+     Heaps ek special tree-based data structure hain jo complete binary tree ke form mein hote hain. Heaps ko mainly priority queues ke implementation ke liye use kiya jata hai. Heaps do types ke hote hain: Max Heap aur Min Heap.
+    </p>
+    <p class="mb-4">
+     Max Heap mein, parent node ka value hamesha child nodes ke values se bada hota hai. Min Heap mein, parent node ka value hamesha child nodes ke values se chhota hota hai.
+    </p>
+    <p class="mb-4">
+     Example ke liye, neeche ek Max Heap ka illustration hai:
+    </p>
+    <img alt="A Max Heap tree structure with parent nodes greater than child nodes" class="mb-4" height="400" src="https://storage.googleapis.com/a1aa/image/fdORV1Dtn81xZ6W7dunbH9Rl5UxkPt7vANuAqkDP8yetesfPB.jpg" width="600"/>
+   </section>
+   <section class="bg-white p-6 rounded shadow-md mb-6">
+    <h2 class="text-xl font-bold mb-4">
+     Heap Operations
+    </h2>
+    <p class="mb-4">
+     Heap par kuch common operations perform kiye ja sakte hain:
+    </p>
+    <ul class="list-disc list-inside mb-4">
+     <li>
+      <strong>
+       Insertion:
+      </strong>
+      Heap mein ek naya element add karna.
+     </li>
+     <li>
+      <strong>
+       Deletion:
+      </strong>
+      Heap se root element remove karna.
+     </li>
+     <li>
+      <strong>
+       Heapify:
+      </strong>
+      Heap property ko maintain karna.
+     </li>
+     <li>
+      <strong>
+       Extract Max/Min:
+      </strong>
+      Max Heap se maximum aur Min Heap se minimum element ko extract karna.
+     </li>
+     <li>
+      <strong>
+       Build Heap:
+      </strong>
+      Ek unsorted array se heap banana.
+     </li>
+    </ul>
+    <p class="mb-4">
+     Example ke liye, ek Max Heap ko build karne ka code:
+    </p>
+    <pre class="bg-gray-200 p-4 rounded mb-4">
+class MaxHeap {
+    constructor() {
+        this.heap = [];
+    }
+
+    insert(value) {
+        this.heap.push(value);
+        this.heapifyUp();
+    }
+
+    heapifyUp() {
+        let index = this.heap.length - 1;
+        while (index &gt; 0) {
+            let element = this.heap[index];
+            let parentIndex = Math.floor((index - 1) / 2);
+            let parent = this.heap[parentIndex];
+
+            if (parent &gt;= element) break;
+
+            this.heap[index] = parent;
+            this.heap[parentIndex] = element;
+            index = parentIndex;
+        }
+    }
+
+    extractMax() {
+        const max = this.heap[0];
+        const end = this.heap.pop();
+        if (this.heap.length &gt; 0) {
+            this.heap[0] = end;
+            this.heapifyDown();
+        }
+        return max;
+    }
+
+    heapifyDown() {
+        let index = 0;
+        const length = this.heap.length;
+        const element = this.heap[0];
+
+        while (true) {
+            let leftChildIndex = 2 * index + 1;
+            let rightChildIndex = 2 * index + 2;
+            let leftChild, rightChild;
+            let swap = null;
+
+            if (leftChildIndex &lt; length) {
+                leftChild = this.heap[leftChildIndex];
+                if (leftChild &gt; element) {
+                    swap = leftChildIndex;
+                }
+            }
+
+            if (rightChildIndex &lt; length) {
+                rightChild = this.heap[rightChildIndex];
+                if (
+                    (swap === null &amp;&amp; rightChild &gt; element) ||
+                    (swap !== null &amp;&amp; rightChild &gt; leftChild)
+                ) {
+                    swap = rightChildIndex;
+                }
+            }
+
+            if (swap === null) break;
+
+            this.heap[index] = this.heap[swap];
+            this.heap[swap] = element;
+            index = swap;
+        }
+    }
+}
+            </pre>
+   </section>
+   <section class="bg-white p-6 rounded shadow-md">
+    <h2 class="text-xl font-bold mb-4">
+     Heaps Questions
+    </h2>
+    <table class="min-w-full bg-white">
+     <thead>
+      <tr>
+       <th class="py-2 px-4 border-b">
+        Question
+       </th>
+       <th class="py-2 px-4 border-b">
+        Article
+       </th>
+       <th class="py-2 px-4 border-b">
+        Practice
+       </th>
+      </tr>
+     </thead>
+     <tbody>
+      <tr>
+       <td class="py-2 px-4 border-b">
+        Implement a Maxheap/MinHeap using arrays and recursion.
+       </td>
+       <td class="py-2 px-4 border-b">
+        <a class="text-blue-600 hover:underline" href="#">
+         Link
+        </a>
+       </td>
+       <td class="py-2 px-4 border-b">
+        <a class="text-blue-600 hover:underline" href="#">
+         Link
+        </a>
+       </td>
+      </tr>
+      <tr>
+       <td class="py-2 px-4 border-b">
+        Sort an Array using heap. (HeapSort)
+       </td>
+       <td class="py-2 px-4 border-b">
+        <a class="text-blue-600 hover:underline" href="#">
+         Link
+        </a>
+       </td>
+       <td class="py-2 px-4 border-b">
+        <a class="text-blue-600 hover:underline" href="#">
+         Link
+        </a>
+       </td>
+      </tr>
+      <tr>
+       <td class="py-2 px-4 border-b">
+        Maximum of all subarrays of size k.
+       </td>
+       <td class="py-2 px-4 border-b">
+        <a class="text-blue-600 hover:underline" href="#">
+         Link
+        </a>
+       </td>
+       <td class="py-2 px-4 border-b">
+        <a class="text-blue-600 hover:underline" href="#">
+         Link
+        </a>
+       </td>
+      </tr>
+      <tr>
+       <td class="py-2 px-4 border-b">
+        “K” largest element in an array
+       </td>
+       <td class="py-2 px-4 border-b">
+        <a class="text-blue-600 hover:underline" href="#">
+         Link
+        </a>
+       </td>
+       <td class="py-2 px-4 border-b">
+        <a class="text-blue-600 hover:underline" href="#">
+         Link
+        </a>
+       </td>
+      </tr>
+      <tr>
+       <td class="py-2 px-4 border-b">
+        Kth smallest and largest element in an unsorted array
+       </td>
+       <td class="py-2 px-4 border-b">
+        <a class="text-blue-600 hover:underline" href="#">
+         Link
+        </a>
+       </td>
+       <td class="py-2 px-4 border-b">
+        <a class="text-blue-600 hover:underline" href="#">
+         Link
+        </a>
+       </td>
+      </tr>
+      <tr>
+       <td class="py-2 px-4 border-b">
+        Merge “K” sorted arrays. [ IMP ]
+       </td>
+       <td class="py-2 px-4 border-b">
+        <a class="text-blue-600 hover:underline" href="#">
+         Link
+        </a>
+       </td>
+       <td class="py-2 px-4 border-b">
+        <a class="text-blue-600 hover:underline" href="#">
+         Link
+        </a>
+       </td>
+      </tr>
+      <tr>
+       <td class="py-2 px-4 border-b">
+        Merge 2 Binary Max Heaps
+       </td>
+       <td class="py-2 px-4 border-b">
+        <a class="text-blue-600 hover:underline" href="#">
+         Link
+        </a>
+       </td>
+       <td class="py-2 px-4 border-b">
+        <a class="text-blue-600 hover:underline" href="#">
+         Link
+        </a>
+       </td>
+      </tr>
+      <tr>
+       <td class="py-2 px-4 border-b">
+        Kth largest sum continuous subarrays
+       </td>
+       <td class="py-2 px-4 border-b">
+        <a class="text-blue-600 hover:underline" href="#">
+         Link
+        </a>
+       </td>
+       <td class="py-2 px-4 border-b">
+        <a class="text-blue-600 hover:underline" href="#">
+         Link
+        </a>
+       </td>
+      </tr>
+      <tr>
+       <td class="py-2 px-4 border-b">
+        Leetcode- reorganize strings
+       </td>
+       <td class="py-2 px-4 border-b">
+        <a class="text-blue-600 hover:underline" href="#">
+         Link
+        </a>
+       </td>
+       <td class="py-2 px-4 border-b">
+        <a class="text-blue-600 hover:underline" href="#">
+         Link
+        </a>
+       </td>
+      </tr>
+      <tr>
+       <td class="py-2 px-4 border-b">
+        Merge “K” Sorted Linked Lists [V.IMP]
+       </td>
+       <td class="py-2 px-4 border-b">
+        <a class="text-blue-600 hover:underline" href="#">
+         Link
+        </a>
+       </td>
+       <td class="py-2 px-4 border-b">
+        <a class="text-blue-600 hover:underline" href="#">
+         Link
+        </a>
+       </td>
+      </tr>
+      <tr>
+       <td class="py-2 px-4 border-b">
+        Smallest range in “K” Lists
+       </td>
+       <td class="py-2 px-4 border-b">
+        <a class="text-blue-600 hover:underline" href="#">
+         Link
+        </a>
+       </td>
+       <td class="py-2 px-4 border-b">
+        <a class="text-blue-600 hover:underline" href="#">
+         Link
+        </a>
+       </td>
+      </tr>
+      <tr>
+       <td class="py-2 px-4 border-b">
+        Median in a stream of Integers
+       </td>
+       <td class="py-2 px-4 border-b">
+        <a class="text-blue-600 hover:underline" href="#">
+         Link
+        </a>
+       </td>
+       <td class="py-2 px-4 border-b">
+        <a class="text-blue-600 hover:underline" href="#">
+         Link
+        </a>
+       </td>
+      </tr>
+      <tr>
+       <td class="py-2 px-4 border-b">
+        Check if a Binary Tree is Heap
+       </td>
+       <td class="py-2 px-4 border-b">
+        <a class="text-blue-600 hover:underline" href="#">
+         Link
+        </a>
+       </td>
+       <td class="py-2 px-4 border-b">
+        <a class="text-blue-600 hover:underline" href="#">
+         Link
+        </a>
+       </td>
+      </tr>
+      <tr>
+       <td class="py-2 px-4 border-b">
+        Connect “n” ropes with minimum cost
+       </td>
+       <td class="py-2 px-4 border-b">
+        <a class="text-blue-600 hover:underline" href="#">
+         Link
+        </a>
+       </td>
+       <td class="py-2 px-4 border-b">
+        <a class="text-blue-600 hover:underline" href="#">
+         Link
+        </a>
+       </td>
+      </tr>
+      <tr>
+       <td class="py-2 px-4 border-b">
+        Convert BST to Min Heap
+       </td>
+       <td class="py-2 px-4 border-b">
+        <a class="text-blue-600 hover:underline" href="#">
+         Link
+        </a>
+       </td>
+       <td class="py-2 px-4 border-b">
+        <a class="text-blue-600 hover:underline" href="#">
+         Link
+        </a>
+       </td>
+      </tr>
+      <tr>
+       <td class="py-2 px-4 border-b">
+        Convert min heap to max heap
+       </td>
+       <td class="py-2 px-4 border-b">
+        <a class="text-blue-600 hover:underline" href="#">
+         Link
+        </a>
+       </td>
+       <td class="py-2 px-4 border-b">
+        <a class="text-blue-600 hover:underline" href="#">
+         Link
+        </a>
+       </td>
+      </tr>
+      <tr>
+       <td class="py-2 px-4 border-b">
+        Rearrange characters in a string such that no two adjacent are same.
+       </td>
+       <td class="py-2 px-4 border-b">
+        <a class="text-blue-600 hover:underline" href="#">
+         Link
+        </a>
+       </td>
+       <td class="py-2 px-4 border-b">
+        <a class="text-blue-600 hover:underline" href="#">
+         Link
+        </a>
+       </td>
+      </tr>
+      <tr>
+       <td class="py-2 px-4 border-b">
+        Minimum sum of two numbers formed from digits of an array
+       </td>
+       <td class="py-2 px-4 border-b">
+        <a class="text-blue-600 hover:underline" href="#">
+         Link
+        </a>
+       </td>
+      
+      </tr>
+     </tbody>
+    </table>
+   </section>
+   <!-- Footer -->
+<footer class="py-4 bg-gray-800 text-white text-center">
+    <p>&copy; 2023 Your Company. All rights reserved.</p>
+</footer>
+  </main>
+ </body>
+</html>
