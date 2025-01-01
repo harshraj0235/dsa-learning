@@ -1,0 +1,295 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find the Maximum and Minimum Element in an Array</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"></link>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+        .hidden {
+            display: none;
+        }
+        pre code {
+            color: #1a202c; /* Tailwind's 'gray-900' color */
+        }
+        .highlight {
+            color: #e53e3e; /* Tailwind's 'red-600' color */
+        }
+    </style>
+</head>
+<body class="bg-gray-100 p-4">
+    <div class="max-w-4xl mx-auto bg-white p-6 rounded-lg shadow-lg">
+        <div class="mb-4">
+            <a href="../array.html" class="text-blue-500 hover:underline"><i class="fas fa-arrow-left"></i> Back</a>
+        </div>
+        <h1 class="text-3xl font-bold mb-4 text-center">Find the Maximum and Minimum Element in an Array</h1>
+        <div class="flex justify-center mb-4">
+            <button class="bg-blue-500 text-white px-4 py-2 rounded-lg text-xl font-bold">
+                <a href="https://leetcode.com/problems/minimize-maximum-of-array/" target="_blank">Solve Now</a>
+            </button>
+        </div>
+        <div class="mb-4">
+            <iframe width="100%" height="315" src="https://www.youtube.com/embed/Jrr0bNcPFgo?si=Zlp-vnH9X7b9OTFD" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <h2 class="text-2xl font-bold mb-4">Solution Explanation</h2>
+        <p class="mb-2">Chalo samjhte hain kaise find karte hain maximum aur minimum element ek array mein step by step:</p>
+        <ol class="list-decimal list-inside mb-4">
+            <li class="mb-2">Pehle, humein ek array lena hoga jismein humein maximum aur minimum element find karna hai. Example ke liye, hum ek array lete hain <code>[3, 5, 1, 8, 2]</code>.</li>
+            <li class="mb-2">Hum do variables use karenge: ek jo maximum value ko store karega (max) aur ek jo minimum value ko store karega (min).</li>
+            <li class="mb-2">Hum array ke har element ko iterate karenge aur check karenge agar current element max se bada hai to max ko update karenge aur agar current element min se chhota hai to min ko update karenge.</li>
+            <li class="mb-2">Aakhir mein, max aur min variables mein maximum aur minimum values store ho jaayengi.</li>
+        </ol>
+        <div class="flex justify-center space-x-4 mb-4">
+            <button id="javaBtn" class="bg-gray-200 px-4 py-2 rounded-lg">Java</button>
+            <button id="pythonBtn" class="bg-gray-200 px-4 py-2 rounded-lg">Python</button>
+            <button id="cppBtn" class="bg-gray-200 px-4 py-2 rounded-lg">C++</button>
+        </div>
+        <div id="javaCode" class="hidden">
+            <h2 class="text-2xl font-bold mb-2">Java Code</h2>
+            <p class="mb-2">Method 1: Using Iteration</p>
+            <p class="mb-2">Step 1: Pehle ek array define karte hain:</p>
+            <pre class="bg-gray-100 p-4 rounded-lg">
+<code>
+int[] array = {3, 5, 1, 8, 2};
+</code>
+            </pre>
+            <p class="mb-2">Step 2: MaxMin function ko call karte hain:</p>
+            <pre class="bg-gray-100 p-4 rounded-lg">
+<code>
+int[] result = findMaxMin(array);
+</code>
+            </pre>
+            <p class="mb-2">Step 3: MaxMin function ko define karte hain:</p>
+            <pre class="bg-gray-100 p-4 rounded-lg">
+<code>
+public static int[] findMaxMin(int[] array) {
+    int max = Integer.MIN_VALUE;
+    int min = Integer.MAX_VALUE;
+    for (int num : array) {
+        if (num > max) {
+            max = num;
+        }
+        if (num < min) {
+            min = num;
+        }
+    }
+    return new int[]{max, min};
+}
+</code>
+            </pre>
+            <p class="mb-2">Step 4: Result ko print karte hain:</p>
+            <pre class="bg-gray-100 p-4 rounded-lg">
+<code>
+System.out.println("Max: " + result[0] + ", Min: " + result[1]);
+</code>
+            </pre>
+            <p class="mb-2">Method 2: Using Recursion</p>
+            <p class="mb-2">Step 1: Pehle ek array define karte hain:</p>
+            <pre class="bg-gray-100 p-4 rounded-lg">
+<code>
+int[] array = {3, 5, 1, 8, 2};
+</code>
+            </pre>
+            <p class="mb-2">Step 2: MaxMin function ko call karte hain:</p>
+            <pre class="bg-gray-100 p-4 rounded-lg">
+<code>
+int[] result = findMaxMin(array, 0, array.length - 1);
+</code>
+            </pre>
+            <p class="mb-2">Step 3: MaxMin function ko define karte hain:</p>
+            <pre class="bg-gray-100 p-4 rounded-lg">
+<code>
+public static int[] <span class="highlight">findMaxMin</span>(int[] array, int start, int end) {
+    if (start == end) {
+        return new int[]{array[start], array[start]};
+    }
+    if (end == start + 1) {
+        if (array[start] > array[end]) {
+            return new int[]{array[start], array[end]};
+        } else {
+            return new int[]{array[end], array[start]};
+        }
+    }
+    int mid = (start + end) / 2;
+    int[] left = findMaxMin(array, start, mid);
+    int[] right = findMaxMin(array, mid + 1, end);
+    return new int[]{Math.max(left[0], right[0]), Math.min(left[1], right[1])};
+}
+</code>
+            </pre>
+            <p class="mb-2">Step 4: Result ko print karte hain:</p>
+            <pre class="bg-gray-100 p-4 rounded-lg">
+<code>
+System.out.println("Max: " + result[0] + ", Min: " + result[1]);
+</code>
+            </pre>
+        </div>
+        <div id="pythonCode" class="hidden">
+            <h2 class="text-2xl font-bold mb-2">Python Code</h2>
+            <p class="mb-2">Method 1: Using Iteration</p>
+            <p class="mb-2">Step 1: Pehle ek array define karte hain:</p>
+            <pre class="bg-gray-100 p-4 rounded-lg">
+<code>
+array = [3, 5, 1, 8, 2]
+</code>
+            </pre>
+            <p class="mb-2">Step 2: MaxMin function ko define karte hain:</p>
+            <pre class="bg-gray-100 p-4 rounded-lg">
+<code>
+def find_max_min(arr):
+    max_val = float('-inf')
+    min_val = float('inf')
+    for num in arr:
+        if num > max_val:
+            max_val = num;
+        if num < min_val:
+            min_val = num;
+    return max_val, min_val
+</code>
+            </pre>
+            <p class="mb-2">Step 3: MaxMin function ko call karte hain aur result ko print karte hain:</p>
+            <pre class="bg-gray-100 p-4 rounded-lg">
+<code>
+max_val, min_val = find_max_min(array)
+print(f"Max: {max_val}, Min: {min_val}")
+</code>
+            </pre>
+            <p class="mb-2">Method 2: Using Recursion</p>
+            <p class="mb-2">Step 1: Pehle ek array define karte hain:</p>
+            <pre class="bg-gray-100 p-4 rounded-lg">
+<code>
+array = [3, 5, 1, 8, 2]
+</code>
+            </pre>
+            <p class="mb-2">Step 2: MaxMin function ko define karte hain:</p>
+            <pre class="bg-gray-100 p-4 rounded-lg">
+<code>
+def find_max_min(arr, start, end):
+    if start == end:
+        return arr[start], arr[start]
+    if end == start + 1:
+        if arr[start] > arr[end]:
+            return arr[start], arr[end]
+        else:
+            return arr[end], arr[start]
+    mid = (start + end) // 2
+    left_max, left_min = find_max_min(arr, start, mid)
+    right_max, right_min = find_max_min(arr, mid + 1, end)
+    return max(left_max, right_max), min(left_min, right_min)
+</code>
+            </pre>
+            <p class="mb-2">Step 3: MaxMin function ko call karte hain aur result ko print karte hain:</p>
+            <pre class="bg-gray-100 p-4 rounded-lg">
+<code>
+max_val, min_val = find_max_min(array, 0, len(array) - 1)
+print(f"Max: {max_val}, Min: {min_val}")
+</code>
+            </pre>
+        </div>
+        <div id="cppCode" class="hidden">
+            <h2 class="text-2xl font-bold mb-2">C++ Code</h2>
+            <p class="mb-2">Method 1: Using Iteration</p>
+            <p class="mb-2">Step 1: Pehle ek array define karte hain:</p>
+            <pre class="bg-gray-100 p-4 rounded-lg">
+<code>
+int arr[] = {3, 5, 1, 8, 2};
+</code>
+            </pre>
+            <p class="mb-2">Step 2: MaxMin function ko define karte hain:</p>
+            <pre class="bg-gray-100 p-4 rounded-lg">
+<code>
+pair<int, int> findMaxMin(int arr[], int n) {
+    int max_val = INT_MIN;
+    int min_val = INT_MAX;
+    for (int i = 0; i < n; i++) {
+        if (arr[i] > max_val) {
+            max_val = arr[i];
+        }
+        if (arr[i] < min_val) {
+            min_val = arr[i];
+        }
+    }
+    return {max_val, min_val};
+}
+</code>
+            </pre>
+            <p class="mb-2">Step 3: MaxMin function ko call karte hain:</p>
+            <pre class="bg-gray-100 p-4 rounded-lg">
+<code>
+pair<int, int> result = findMaxMin(arr, sizeof(arr) / sizeof(arr[0]));
+</code>
+            </pre>
+            <p class="mb-2">Step 4: Result ko print karte hain:</p>
+            <pre class="bg-gray-100 p-4 rounded-lg">
+<code>
+cout << "Max: " << result.first << ", Min: " << result.second << endl;
+</code>
+            </pre>
+            <p class="mb-2">Method 2: Using Recursion</p>
+            <p class="mb-2">Step 1: Pehle ek array define karte hain:</p>
+            <pre class="bg-gray-100 p-4 rounded-lg">
+<code>
+int arr[] = {3, 5, 1, 8, 2};
+</code>
+            </pre>
+            <p class="mb-2">Step 2: MaxMin function ko define karte hain:</p>
+            <pre class="bg-gray-100 p-4 rounded-lg">
+<code>
+pair<int, int> findMaxMin(int arr[], int start, int end) {
+    if (start == end) {
+        return {arr[start], arr[start]};
+    }
+    if (end == start + 1) {
+        if (arr[start] > arr[end]) {
+            return {arr[start], arr[end]};
+        } else {
+            return {arr[end], arr[start]};
+        }
+    }
+    int mid = (start + end) / 2;
+    pair<int, int> left = findMaxMin(arr, start, mid);
+    pair<int, int> right = findMaxMin(arr, mid + 1, end);
+    return {max(left.first, right.first), min(left.second, right.second)};
+}
+</code>
+            </pre>
+            <p class="mb-2">Step 3: MaxMin function ko call karte hain:</p>
+            <pre class="bg-gray-100 p-4 rounded-lg">
+<code>
+pair<int, int> result = findMaxMin(arr, 0, sizeof(arr) / sizeof(arr[0]) - 1);
+</code>
+            </pre>
+            <p class="mb-2">Step 4: Result ko print karte hain:</p>
+            <pre class="bg-gray-100 p-4 rounded-lg">
+<code>
+cout << "Max: " << result.first << ", Min: " << result.second << endl;
+</code>
+            </pre>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('javaBtn').addEventListener('click', function() {
+            document.getElementById('javaCode').classList.remove('hidden');
+            document.getElementById('pythonCode').classList.add('hidden');
+            document.getElementById('cppCode').classList.add('hidden');
+        });
+
+        document.getElementById('pythonBtn').addEventListener('click', function() {
+            document.getElementById('javaCode').classList.add('hidden');
+            document.getElementById('pythonCode').classList.remove('hidden');
+            document.getElementById('cppCode').classList.add('hidden');
+        });
+
+        document.getElementById('cppBtn').addEventListener('click', function() {
+            document.getElementById('javaCode').classList.add('hidden');
+            document.getElementById('pythonCode').classList.add('hidden');
+            document.getElementById('cppCode').classList.remove('hidden');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,302 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find the Kth Max and Min Element in an Array</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"></link>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+        .hidden {
+            display: none;
+        }
+        pre code {
+            color: #1a202c; /* Tailwind's 'gray-900' color */
+        }
+        .highlight {
+            color: #e53e3e; /* Tailwind's 'red-600' color */
+        }
+        .method-title {
+            color: #2b6cb0; /* Tailwind's 'blue-700' color */
+        }
+        .example-code {
+            background-color: #edf2f7; /* Tailwind's 'gray-100' color */
+            padding: 1rem;
+            border-radius: 0.5rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 p-4">
+    <div class="max-w-4xl mx-auto bg-white p-6 rounded-lg shadow-lg">
+        <div class="mb-4">
+            <a href="../array.html" class="text-blue-500 hover:underline"><i class="fas fa-arrow-left"></i> Back</a>
+        </div>
+        <h1 class="text-3xl font-bold mb-4 text-center">Find the Kth Max and Min Element in an Array</h1>
+        <div class="flex justify-center mb-4">
+            <button class="bg-blue-500 text-white px-4 py-2 rounded-lg text-xl font-bold">
+                <a href="https://leetcode.com/problems/kth-largest-element-in-an-array/" target="_blank">Solve Now</a>
+            </button>
+        </div>
+        <div class="mb-4">
+            <iframe width="100%" height="315" src="https://www.youtube.com/embed/aXJ-p3Qa4TY?si=PadCq5f71egU8umv" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <h2 class="text-2xl font-bold mb-4">Solution Explanation</h2>
+        <p class="mb-2">Chalo samjhte hain kaise find karte hain Kth maximum aur minimum element ek array mein step by step:</p>
+        <div class="mb-4">
+            <h3 class="text-xl font-bold method-title">Method 1: Using Sorting</h3>
+            <p class="mb-2">Step 1: Pehle ek array define karte hain:</p>
+            <div class="example-code">
+                <pre><code>int[] array = {3, 5, 1, 8, 2};<br>int K = 2;</code></pre>
+            </div>
+            <p class="mb-2">Step 2: Array ko sort karte hain:</p>
+            <div class="example-code">
+                <pre><code>Arrays.sort(array);</code></pre>
+            </div>
+            <p class="mb-2">Step 3: Kth minimum aur Kth maximum element ko find karte hain:</p>
+            <div class="example-code">
+                <pre><code>int KthMin = array[K - 1];<br>int KthMax = array[array.length - K];</code></pre>
+            </div>
+            <p class="mb-2">Step 4: Result ko print karte hain:</p>
+            <div class="example-code">
+                <pre><code>System.out.println("Kth Max: " + KthMax + ", Kth Min: " + KthMin);</code></pre>
+            </div>
+        </div>
+        <div class="mb-4">
+            <h3 class="text-xl font-bold method-title">Method 2: Using Priority Queue</h3>
+            <p class="mb-2">Step 1: Pehle ek array define karte hain:</p>
+            <div class="example-code">
+                <pre><code>int[] array = {3, 5, 1, 8, 2};<br>int K = 2;</code></pre>
+            </div>
+            <p class="mb-2">Step 2: MinHeap aur MaxHeap ko initialize karte hain:</p>
+            <div class="example-code">
+                <pre><code>PriorityQueue<Integer> minHeap = new PriorityQueue<>();<br>PriorityQueue<Integer> maxHeap = new PriorityQueue<>(Collections.reverseOrder());</code></pre>
+            </div>
+            <p class="mb-2">Step 3: Array ke elements ko heaps mein add karte hain:</p>
+            <div class="example-code">
+                <pre><code>for (int num : array) {<br>    minHeap.add(num);<br>    maxHeap.add(num);<br>}</code></pre>
+            </div>
+            <p class="mb-2">Step 4: Kth minimum aur Kth maximum element ko find karte hain:</p>
+            <div class="example-code">
+                <pre><code>int KthMin = 0, KthMax = 0;<br>for (int i = 0; i < K; i++) {<br>    KthMin = minHeap.poll();<br>    KthMax = maxHeap.poll();<br>}</code></pre>
+            </div>
+            <p class="mb-2">Step 5: Result ko print karte hain:</p>
+            <div class="example-code">
+                <pre><code>System.out.println("Kth Max: " + KthMax + ", Kth Min: " + KthMin);</code></pre>
+            </div>
+        </div>
+        <div class="mb-4">
+            <h3 class="text-xl font-bold method-title">Method 3: Using Quickselect</h3>
+            <p class="mb-2">Step 1: Pehle ek array define karte hain:</p>
+            <div class="example-code">
+                <pre><code>int[] array = {3, 5, 1, 8, 2};<br>int K = 2;</code></pre>
+            </div>
+            <p class="mb-2">Step 2: Quickselect function ko call karte hain:</p>
+            <div class="example-code">
+                <pre><code>int KthMin = quickselect(array, 0, array.length - 1, K - 1);<br>int KthMax = quickselect(array, 0, array.length - 1, array.length - K);</code></pre>
+            </div>
+            <p class="mb-2">Step 3: Quickselect function ko define karte hain:</p>
+            <div class="example-code">
+                <pre><code>public static int quickselect(int[] array, int left, int right, int K) {<br>    if (left == right) {<br>        return array[left];<br>    }<br>    int pivotIndex = partition(array, left, right);<br>    if (K == pivotIndex) {<br>        return array[K];<br>    } else if (K < pivotIndex) {<br>        return quickselect(array, left, pivotIndex - 1, K);<br>    } else {<br>        return quickselect(array, pivotIndex + 1, right, K);<br>    }<br>}</code></pre>
+            </div>
+            <p class="mb-2">Step 4: Partition function ko define karte hain:</p>
+            <div class="example-code">
+                <pre><code>public static int partition(int[] array, int left, int right) {<br>    int pivot = array[right];<br>    int i = left;<br>    for (int j = left; j < right; j++) {<br>        if (array[j] <= pivot) {<br>            int temp = array[i];<br>            array[i] = array[j];<br>            array[j] = temp;<br>            i++;<br>        }<br>    }<br>    int temp = array[i];<br>    array[i] = array[right];<br>    array[right] = temp;<br>    return i;<br>}</code></pre>
+            </div>
+            <p class="mb-2">Step 5: Result ko print karte hain:</p>
+            <div class="example-code">
+                <pre><code>System.out.println("Kth Max: " + KthMax + ", Kth Min: " + KthMin);</code></pre>
+            </div>
+        </div>
+        <div class="flex justify-center space-x-4 mb-4">
+            <button id="javaBtn" class="bg-gray-200 px-4 py-2 rounded-lg">Java</button>
+            <button id="pythonBtn" class="bg-gray-200 px-4 py-2 rounded-lg">Python</button>
+            <button id="cppBtn" class="bg-gray-200 px-4 py-2 rounded-lg">C++</button>
+        </div>
+        <div id="javaCode" class="hidden">
+            <h2 class="text-2xl font-bold mb-2">Java Code</h2>
+            <p class="mb-2">Method 1: Using Sorting</p>
+            <p class="mb-2">Step 1: Pehle ek array define karte hain:</p>
+            <pre class="bg-gray-100 p-4 rounded-lg">
+<code>
+int[] array = {3, 5, 1, 8, 2};
+int K = 2;
+</code>
+            </pre>
+            <p class="mb-2">Step 2: KthMaxMin function ko call karte hain:</p>
+            <pre class="bg-gray-100 p-4 rounded-lg">
+<code>
+int[] result = findKthMaxMin(array, K);
+</code>
+            </pre>
+            <p class="mb-2">Step 3: KthMaxMin function ko define karte hain:</p>
+            <pre class="bg-gray-100 p-4 rounded-lg">
+<code>
+public static int[] findKthMaxMin(int[] array, int K) {
+    // Array ko sort karte hain
+    Arrays.sort(array);
+    // Kth minimum aur Kth maximum element ko find karte hain
+    int KthMin = array[K - 1];
+    int KthMax = array[array.length - K];
+    return new int[]{KthMax, KthMin};
+}
+</code>
+            </pre>
+            <p class="mb-2">Step 4: Result ko print karte hain:</p>
+            <pre class="bg-gray-100 p-4 rounded-lg">
+<code>
+System.out.println("Kth Max: " + result[0] + ", Kth Min: " + result[1]);
+</code>
+            </pre>
+            <p class="mb-2">Method 2: Using Priority Queue</p>
+            <p class="mb-2">Step 1: Pehle ek array define karte hain:</p>
+            <pre class="bg-gray-100 p-4 rounded-lg">
+<code>
+int[] array = {3, 5, 1, 8, 2};
+int K = 2;
+</code>
+            </pre>
+            <p class="mb-2">Step 2: KthMaxMin function ko call karte hain:</p>
+            <pre class="bg-gray-100 p-4 rounded-lg">
+<code>
+int[] result = findKthMaxMin(array, K);
+</code>
+            </pre>
+            <p class="mb-2">Step 3: KthMaxMin function ko define karte hain:</p>
+            <pre class="bg-gray-100 p-4 rounded-lg">
+<code>
+public static int[] findKthMaxMin(int[] array, int K) {
+    // MinHeap aur MaxHeap ko initialize karte hain
+    PriorityQueue<Integer> minHeap = new PriorityQueue<>();
+    PriorityQueue<Integer> maxHeap = new PriorityQueue<>(Collections.reverseOrder());
+    // Array ke elements ko heaps mein add karte hain
+    for (int num : array) {
+        minHeap.add(num);
+        maxHeap.add(num);
+    }
+    // Kth minimum aur Kth maximum element ko find karte hain
+    int KthMin = 0, KthMax = 0;
+    for (int i = 0; i < K; i++) {
+        KthMin = minHeap.poll();
+        KthMax = maxHeap.poll();
+    }
+    return new int[]{KthMax, KthMin};
+}
+</code>
+            </pre>
+            <p class="mb-2">Step 4: Result ko print karte hain:</p>
+            <pre class="bg-gray-100 p-4 rounded-lg">
+<code>
+System.out.println("Kth Max: " + result[0] + ", Kth Min: " + result[1]);
+</code>
+            </pre>
+            <p class="mb-2">Method 3: Using Quickselect</p>
+            <p class="mb-2">Step 1: Pehle ek array define karte hain:</p>
+            <pre class="bg-gray-100 p-4 rounded-lg">
+<code>
+int[] array = {3, 5, 1, 8, 2};
+int K = 2;
+</code>
+            </pre>
+            <p class="mb-2">Step 2: KthMaxMin function ko call karte hain:</p>
+            <pre class="bg-gray-100 p-4 rounded-lg">
+<code>
+int KthMin = quickselect(array, 0, array.length - 1, K - 1);
+int KthMax = quickselect(array, 0, array.length - 1, array.length - K);
+</code>
+            </pre>
+            <p class="mb-2">Step 3: Quickselect function ko define karte hain:</p>
+            <pre class="bg-gray-100 p-4 rounded-lg">
+<code>
+public static int quickselect(int[] array, int left, int right, int K) {
+    if (left == right) {
+        return array[left];
+    }
+    int pivotIndex = partition(array, left, right);
+    if (K == pivotIndex) {
+        return array[K];
+    } else if (K < pivotIndex) {
+        return quickselect(array, left, pivotIndex - 1, K);
+    } else {
+        return quickselect(array, pivotIndex + 1, right, K);
+    }
+}
+</code>
+            </pre>
+            <p class="mb-2">Step 4: Partition function ko define karte hain:</p>
+            <pre class="bg-gray-100 p-4 rounded-lg">
+<code>
+public static int partition(int[] array, int left, int right) {
+    int pivot = array[right];
+    int i = left;
+    for (int j = left; j < right; j++) {
+        if (array[j] <= pivot) {
+            int temp = array[i];
+            array[i] = array[j];
+            array[j] = temp;
+            i++;
+        }
+    }
+    int temp = array[i];
+    array[i] = array[right];
+    array[right] = temp;
+    return i;
+}
+</code>
+            </pre>
+            <p class="mb-2">Step 5: Result ko print karte hain:</p>
+            <pre class="bg-gray-100 p-4 rounded-lg">
+<code>
+System.out.println("Kth Max: " + KthMax + ", Kth Min: " + KthMin);
+</code>
+            </pre>
+        </div>
+        <div id="pythonCode" class="hidden">
+            <h2 class="text-2xl font-bold mb-2">Python Code</h2>
+            <p class="mb-2">Method 1: Using Sorting</p>
+            <p class="mb-2">Step 1: Pehle ek array define karte hain:</p>
+            <pre class="bg-gray-100 p-4 rounded-lg">
+<code>
+array = [3, 5, 1, 8, 2]
+K = 2
+</code>
+            </pre>
+            <p class="mb-2">Step 2: KthMaxMin function ko define karte hain:</p>
+            <pre class="bg-gray-100 p-4 rounded-lg">
+<code>
+def find_kth_max_min(arr, K):
+    # Array ko sort karte hain
+    arr.sort()
+    # Kth minimum aur Kth maximum element ko find karte hain
+    Kth_min = arr[K - 1]
+    Kth_max = arr[-K]
+    return Kth_max, Kth_min
+</code>
+            </pre>
+            <p class="mb-2">Step 3: KthMaxMin function ko call karte hain aur result ko print karte hain:</p>
+            <pre class="bg-gray-100 p-4 rounded-lg">
+<code>
+Kth_max, Kth_min = find_kth_max_min(array, K)
+print(f"Kth Max: {Kth_max}, Kth Min: {Kth_min}")
+</code>
+            </pre>
+            <p class="mb-2">Method 2: Using Heapq</p>
+            <p class="mb-2">Step 1: Pehle ek array define karte hain:</p>
+            <pre class="bg-gray-100 p-4 rounded-lg">
+<code>
+array = [3, 5, 1, 8, 2]
+K = 2
+</code>
+            </pre>
+            <p class="mb-2">Step 2: KthMaxMin function ko define karte hain:</p>
+            <pre class="bg-gray-100 p-4 rounded-lg">
+<code>
+import heapq
+
+def find_kth_max_min(arr, K):
+    # Kth minimum aur Kth maximum element ko find karte hain using heapq
+    Kth_min = heapq.nsmallest(K, arr)[-1]
+    Kth_max = heapq.nlargest(K, arr)[-1]
+    return Kth_max
